@@ -1,0 +1,25 @@
+- Egy kis olvasgatas utan kiderult, hogy a jovendo 2.4 GHz-es LoRa sat
+vetlehez a legjobb kiindulo a Dreamcatcher chat, ennek is az elso
+valtozatai. Merthogy tobb is van belole. Ezt ket olasz jegyzi, majd az
+othernet forumon jelen levok kozul alakitgattak. A "user-friendly"re
+alakitottat foxbonny es syed alakitotta, egy web serveren keresztul
+lehet parameterezni es adni/venni vele, de gondolom ismered.
+Ket verziot leforditottam a koraiakbol, Debug opcioval, hogy lassam,
+mikor mi tortenik. Eredetileg a kiindulas ket kulonallo DC 3.0x board.
+Sajos az alapkoncepcio is az volt, hogy a ket Dreamcatcher kozul az
+egyik kezd kuldozgetni csomagokat, es ha a masik valaszol, akkor lesz
+belole kommunikacio, legalabbis a debuggal ezt latom.
+Vagyis ha csak venni szeretnek, mar akkor is bele kell nyulni. Egy
+masik problema, hogy mar az eredeti Semtech definicios fileban sincs
+benne az osszes LoRa parameter, amik most kezdenek hasznalatba jonni a
+satellitekkel valo kapcsolatban. Konkretan pl. 62.5 kHz bandwith.
+- a kodban latok reszelteket a RFFC5071 pll, mixer, stb
+programozasara. Eddig ugy gondoltam, hogy a LoRa SX1281 direkt modban
+dolgozhat 2.4 GHz-en, es ez van a boardon is alapban bekonfiguralva.
+Talan a chathez kell ez a Mixed mod? Erre nem lattam sehol utalast.
+(Vagy a Mix mod a default config a boardokon?)
+
+- Zoli:
+Van a radioheadnek egy upgradelt változata, azzal próbálkozz ott már könnyedén lehet a sávszéleket váltogatni:
+https://github.com/hallard/RadioHead
+A te boardjaid direct módban vannak. A LoRa chat is mehet direct vagy mixed módban, amit a user szeretne, az már csak egy RF keverés a végén, hogy milyen sávba kerül.
